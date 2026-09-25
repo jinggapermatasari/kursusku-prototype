@@ -1,0 +1,547 @@
+:root {
+    --tosca-dark: #00695c;
+    --tosca: #009688;
+    --tosca-light: #4db6ac;
+    --tosca-soft: #e0f2f1;
+
+    --white: #ffffff;
+
+    --text: #173b38;
+    --muted: #607d79;
+
+    --line: #b2dfdb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e0f7f5 0%,
+            #b2dfdb 45%,
+            #80cbc4 100%
+        );
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1080px, 92%);
+
+    margin-inline: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background:
+        linear-gradient(
+            90deg,
+            #00695c,
+            #00897b,
+            #26a69a
+        );
+
+    color: white;
+
+    border-bottom:
+        3px solid
+        #004d40;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 77, 64, .2);
+}
+
+.nav-wrap {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+.brand {
+    color: white;
+
+    font-size: 1.35rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGASI
+========================= */
+
+.nav-links {
+    display: flex;
+
+    gap: .7rem;
+
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    padding:
+        .55rem
+        .9rem;
+
+    border-radius: .6rem;
+
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    background:
+        rgba(255, 255, 255, .2);
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+.page-intro {
+    max-width: 720px;
+
+    margin:
+        2.5rem
+        auto
+        1.25rem;
+}
+
+.eyebrow {
+    color: var(--tosca-dark);
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .05em;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.form-card,
+.summary-card {
+    max-width: 900px;
+
+    margin:
+        0
+        auto
+        2rem;
+
+    padding: 1.5rem;
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 1rem;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 77, 64, .12);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label,
+legend {
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: .35rem;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+
+    padding:
+        .8rem
+        .9rem;
+
+    border:
+        1px solid
+        #80cbc4;
+
+    border-radius: .65rem;
+
+    background: white;
+
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline:
+        3px solid
+        rgba(0, 150, 136, .18);
+
+    border-color:
+        var(--tosca);
+}
+
+
+/* =========================
+   RADIO & CHECKBOX
+========================= */
+
+.choice {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .45rem;
+
+    margin-right: 1rem;
+
+    font-weight: 400;
+}
+
+.help {
+    color: var(--muted);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn-primary {
+    display: inline-block;
+
+    border: 0;
+
+    border-radius: .7rem;
+
+    padding:
+        .8rem
+        1.1rem;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00695c,
+            #009688,
+            #26a69a
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 105, 92, .25);
+
+    transition: .2s;
+}
+
+.btn-primary:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 16px
+        rgba(0, 105, 92, .3);
+}
+
+.btn-secondary {
+    display: inline-block;
+
+    margin-left: .5rem;
+
+    padding:
+        .8rem
+        1.1rem;
+
+    border:
+        1px solid
+        var(--tosca);
+
+    border-radius: .7rem;
+
+    color: var(--tosca-dark);
+
+    text-decoration: none;
+
+    background: white;
+}
+
+.btn-secondary:hover {
+    background:
+        var(--tosca-soft);
+}
+
+
+/* =========================
+   ALERT
+========================= */
+
+.alert-success {
+    max-width: 900px;
+
+    margin:
+        2rem
+        auto
+        1rem;
+
+    padding: 1.2rem;
+
+    background:
+        #e0f2f1;
+
+    border-left:
+        4px solid
+        #00897b;
+
+    border-radius: .5rem;
+}
+
+
+/* =========================
+   RINGKASAN HASIL
+========================= */
+
+.summary-list {
+    display: grid;
+
+    grid-template-columns:
+        170px
+        1fr;
+
+    gap:
+        .65rem
+        1rem;
+}
+
+.summary-list dt {
+    font-weight: 700;
+}
+
+.summary-list dd {
+    margin: 0;
+}
+
+.result-action {
+    margin-top: 1.5rem;
+}
+
+
+/* =========================
+   TABEL
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: .8rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 77, 64, .12);
+}
+
+th {
+    background:
+        linear-gradient(
+            90deg,
+            #00695c,
+            #00897b
+        );
+
+    color: white;
+
+    padding: .9rem;
+
+    text-align: left;
+}
+
+td {
+    padding: .85rem;
+
+    border-bottom:
+        1px solid
+        #b2dfdb;
+}
+
+tr:hover td {
+    background:
+        #e0f2f1;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.badge-full,
+.badge-available {
+    display: inline-block;
+
+    padding:
+        .3rem
+        .65rem;
+
+    border-radius: 999px;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+}
+
+.badge-full {
+    background: #ffebee;
+
+    color: #c62828;
+}
+
+.badge-available {
+    background: #e0f2f1;
+
+    color: #00695c;
+}
+
+
+/* =========================
+   AKSI KATALOG
+========================= */
+
+.catalog-action {
+    margin-top: 1.5rem;
+
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 640px) {
+
+    .nav-wrap {
+        align-items: flex-start;
+
+        padding-block: .8rem;
+
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: .4rem;
+    }
+
+    .nav-links a {
+        padding:
+            .45rem
+            .7rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card,
+    .summary-card {
+        padding: 1rem;
+    }
+
+    .summary-list {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+
+        margin-top: .5rem;
+    }
+
+    table {
+        font-size: .9rem;
+    }
+}
