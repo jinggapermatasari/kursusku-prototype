@@ -6,29 +6,15 @@ $phone = trim($_POST['phone'] ?? '');
 $studyProgram = trim($_POST['study_program'] ?? '');
 
 $course = $_POST['course'] ?? '';
-
 $participantType = $_POST['participant_type'] ?? '';
 
 $interests = $_POST['interests'] ?? [];
 
 $note = trim($_POST['note'] ?? '');
-
 $source = $_POST['source'] ?? '';
-
-
-// Memastikan interests selalu berupa array
-
-if (!is_array($interests)) {
-    $interests = [];
-}
-
-
-// Mengubah array minat menjadi teks
 
 $interestText = implode(', ', $interests);
 
-
-// Fungsi keamanan output
 
 function e($value): string
 {
@@ -53,14 +39,17 @@ function e($value): string
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Pendaftaran Berhasil - KursusKu</title>
+    <title>
+        Hasil Pendaftaran - KursusKu
+    </title>
 
     <link
         rel="stylesheet"
-        href="assets/css/style.css"
+        href="assets/css/style.css?v=5"
     >
 
 </head>
+
 
 <body>
 
@@ -68,157 +57,78 @@ function e($value): string
 
     <div class="container nav-wrap">
 
-        <a
-            href="index.php"
-            class="brand"
-        >
-            KursusKu
+        <a href="index.php" class="brand">
+            ★ KursusKu
         </a>
-
-        <nav
-            class="nav-links"
-            aria-label="Navigasi utama"
-        >
-
-            <a href="index.php">
-                Katalog
-            </a>
-
-            <a href="registration.php">
-                Daftar Kursus
-            </a>
-
-        </nav>
 
     </div>
 
 </header>
 
 
-<main class="container">
+<main class="container result-page">
 
-    <div class="alert-success">
+    <section class="alert-success">
 
         <h1>
-            Pendaftaran Berhasil!
+            Pendaftaran Berhasil Diterima
         </h1>
 
         <p>
-            Data pendaftaran kamu berhasil diterima.
+            Periksa kembali data pendaftaran latihan berikut.
         </p>
 
-    </div>
+    </section>
 
 
     <section class="summary-card">
 
-        <h2>
-            Ringkasan Pendaftaran
-        </h2>
-
-
         <dl class="summary-list">
 
-            <dt>
-                Nama
-            </dt>
-
-            <dd>
-                <?= e($name) ?>
-            </dd>
+            <dt>Nama</dt>
+            <dd><?= e($name) ?></dd>
 
 
-            <dt>
-                Email
-            </dt>
-
-            <dd>
-                <?= e($email) ?>
-            </dd>
+            <dt>Email</dt>
+            <dd><?= e($email) ?></dd>
 
 
-            <dt>
-                No. HP
-            </dt>
-
-            <dd>
-                <?= e($phone) ?>
-            </dd>
+            <dt>Nomor HP</dt>
+            <dd><?= e($phone) ?></dd>
 
 
-            <dt>
-                Program Studi
-            </dt>
-
-            <dd>
-                <?= e($studyProgram) ?>
-            </dd>
+            <dt>Program Studi</dt>
+            <dd><?= e($studyProgram) ?></dd>
 
 
-            <dt>
-                Kursus
-            </dt>
-
-            <dd>
-                <?= e($course) ?>
-            </dd>
+            <dt>Kursus</dt>
+            <dd><?= e($course) ?></dd>
 
 
-            <dt>
-                Jenis Peserta
-            </dt>
-
-            <dd>
-                <?= e($participantType) ?>
-            </dd>
+            <dt>Jenis Peserta</dt>
+            <dd><?= e($participantType) ?></dd>
 
 
-            <dt>
-                Minat
-            </dt>
-
-            <dd>
-                <?= e($interestText ?: '-') ?>
-            </dd>
+            <dt>Minat Tambahan</dt>
+            <dd><?= e($interestText) ?></dd>
 
 
-            <dt>
-                Catatan
-            </dt>
-
-            <dd>
-                <?= e($note ?: '-') ?>
-            </dd>
+            <dt>Catatan</dt>
+            <dd><?= e($note) ?></dd>
 
 
-            <dt>
-                Source
-            </dt>
-
-            <dd>
-                <?= e($source) ?>
-            </dd>
+            <dt>Sumber</dt>
+            <dd><?= e($source) ?></dd>
 
         </dl>
 
 
-        <div class="result-action">
-
-            <a
-                href="registration.php"
-                class="btn-primary"
-            >
-                Kembali ke Form
-            </a>
-
-            <a
-                href="index.php"
-                class="btn-secondary"
-            >
-                Kembali ke Katalog
-            </a>
-
-        </div>
+        <a
+            href="registration.php"
+            class="btn-primary"
+        >
+            ← Kembali ke Form
+        </a>
 
     </section>
 

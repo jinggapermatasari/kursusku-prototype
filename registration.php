@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Daftar Kursus - KursusKu</title>
 
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css"
-    >
-
+    <!-- CSS utama KursusKu -->
+    <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 
 <body>
 
 <header class="site-header">
-
     <div class="container nav-wrap">
 
-        <a
-            href="index.php"
-            class="brand"
-        >
-            KursusKu
+        <a href="index.php" class="brand">
+            ★ KursusKu
         </a>
 
-        <div class="nav-links">
+        <nav aria-label="Navigasi utama">
+            <a href="index.php#beranda">Beranda</a>
+            <a href="index.php#katalog">Kursus</a>
+            <a href="index.php#cara-daftar">Cara Daftar</a>
+            <a href="index.php#keunggulan">Keunggulan</a>
+            <a href="index.php#media">Media</a>
+            <a href="index.php#kontak">Kontak</a>
+            <a href="index.php#history">History</a>
 
-            <a href="index.php">
-                Katalog
+            <a href="registration.php" class="nav-button">
+                Daftar Sekarang
             </a>
-
-            <a href="registration.php">
-                Daftar Kursus
-            </a>
-
-        </div>
+        </nav>
 
     </div>
-
 </header>
 
 
-<main class="container">
+<main>
 
-    <section class="page-intro">
+    <!-- Judul halaman -->
+    <section class="page-intro container">
 
         <p class="eyebrow">
-            Pendaftaran
+            PENDAFTARAN KURSUS
         </p>
 
         <h1>
-            Daftar Kursus
+            Mulai Belajar Bersama KursusKu
         </h1>
 
         <p>
-            Silakan isi data berikut untuk mendaftar kursus.
+            Isi data berikut untuk melakukan pendaftaran kursus.
+            Pastikan data yang dimasukkan sudah benar.
         </p>
 
     </section>
 
 
-    <section class="form-card">
+    <!-- Form pendaftaran -->
+    <section class="form-card container">
 
         <form
             action="process-registration.php"
@@ -76,6 +67,7 @@
             class="registration-form"
         >
 
+            <!-- Hidden -->
             <input
                 type="hidden"
                 name="source"
@@ -83,6 +75,7 @@
             >
 
 
+            <!-- Nama dan Email -->
             <div class="form-grid">
 
                 <div class="form-group">
@@ -95,10 +88,10 @@
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="Masukkan nama lengkap"
                         minlength="3"
                         maxlength="100"
                         autocomplete="name"
+                        placeholder="Masukkan nama lengkap"
                         required
                     >
 
@@ -115,14 +108,16 @@
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="contoh@email.com"
+                        maxlength="120"
                         autocomplete="email"
+                        placeholder="contoh@email.com"
                         required
                     >
 
                 </div>
 
 
+                <!-- Nomor HP -->
                 <div class="form-group">
 
                     <label for="phone">
@@ -133,14 +128,16 @@
                         type="tel"
                         id="phone"
                         name="phone"
-                        placeholder="08xxxxxxxxxx"
+                        maxlength="15"
                         autocomplete="tel"
+                        placeholder="081234567890"
                         required
                     >
 
                 </div>
 
 
+                <!-- Program Studi -->
                 <div class="form-group">
 
                     <label for="study_program">
@@ -151,6 +148,7 @@
                         type="text"
                         id="study_program"
                         name="study_program"
+                        maxlength="100"
                         placeholder="Contoh: PTIK"
                         required
                     >
@@ -160,10 +158,11 @@
             </div>
 
 
+            <!-- Pilihan kursus -->
             <div class="form-group">
 
                 <label for="course">
-                    Pilih Kursus
+                    Kursus yang Dipilih
                 </label>
 
                 <select
@@ -193,6 +192,7 @@
             </div>
 
 
+            <!-- Jenis Peserta -->
             <fieldset class="form-group">
 
                 <legend>
@@ -228,10 +228,11 @@
             </fieldset>
 
 
+            <!-- Minat -->
             <fieldset class="form-group">
 
                 <legend>
-                    Minat Belajar
+                    Minat Tambahan
                 </legend>
 
                 <label class="choice">
@@ -275,6 +276,7 @@
             </fieldset>
 
 
+            <!-- Catatan -->
             <div class="form-group">
 
                 <label for="note">
@@ -285,13 +287,18 @@
                     id="note"
                     name="note"
                     rows="5"
-                    maxlength="500"
-                    placeholder="Tuliskan catatan jika ada..."
+                    maxlength="300"
+                    placeholder="Tuliskan kebutuhan belajar Anda (opsional)"
                 ></textarea>
+
+                <small class="help">
+                    Maksimal 300 karakter.
+                </small>
 
             </div>
 
 
+            <!-- Tombol -->
             <button
                 type="submit"
                 class="btn-primary"
@@ -305,6 +312,18 @@
 
 </main>
 
-</body>
 
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p>
+            © <?= date("Y") ?> KursusKu. Semua hak dilindungi.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
 </html>
