@@ -1,3 +1,4 @@
+```php
 <?php
 
 require __DIR__ . '/helpers.php';
@@ -19,6 +20,9 @@ $history = [
         'total' => 500000,
     ],
 ];
+
+// Data riwayat pendaftaran
+$registrations = $history;
 
 ?>
 
@@ -124,7 +128,7 @@ $history = [
                 </div>
 
 
-                <?php foreach ($history as $item): ?>
+                <?php foreach ($registrations as $item): ?>
 
                     <div class="history-table-row">
 
@@ -192,3 +196,4 @@ $history = [
 </body>
 
 </html>
+```
