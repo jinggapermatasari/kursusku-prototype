@@ -1,4 +1,3 @@
-```php
 <?php
 
 require __DIR__ . '/helpers.php';
@@ -196,4 +195,3 @@ $registrations = $history;
 </body>
 
 </html>
-```
