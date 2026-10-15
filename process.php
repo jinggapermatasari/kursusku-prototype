@@ -129,6 +129,9 @@ if (
 
 if (!empty($errors)) {
 
+    // Menetapkan HTTP response code 422 jika validasi gagal
+    http_response_code(422);
+
     ?>
 
     <!doctype html>
